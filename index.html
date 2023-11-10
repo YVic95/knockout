@@ -10,9 +10,14 @@
         <!-- ko text: myText --><!-- /ko -->
         <p data-bind="html: myHtml"></p>
 
-        <button data-bind="click: onClick">Click it</button>
+        <button data-bind="click: onClick">Get discount!</button>
         <ul data-bind="foreach: items">
             <li data-bind="text: `${$data} ${$index()}`"></li>
         </ul>
+        <p data-bind="text: obj().a"></p>
+        <p data-bind="text: obj().b"></p>
+        <p data-bind="if: isActive, style: {color: 'green', fontWeight: 100}">The discount has been activated</p>
+        <p data-bind="ifnot: isActive, style: {color: 'red', fontWeight: 100}">The discount has not been activated</p>
+        <div data-bind="style: {color: isActive() ? 'forestgreen' : 'red', fontWeight: 'bold'}">Status</div>
     </body>
 </html>
