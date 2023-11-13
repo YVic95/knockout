@@ -3,6 +3,8 @@ function viewModel() {
     this.isInputFocused = ko.observable(false);
     this.inputVal = ko.observable('');
     this.isSubmitAllowed = ko.observable(false);
+    this.hasCellphone = ko.observable(false);
+    this.cellphoneNumber = "";
 
     this.onClick = function(viewModel, event) {
         this.isActive(!this.isActive());
