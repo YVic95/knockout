@@ -6,23 +6,6 @@
         <title>Webpack App</title>
     </head>
     <body>
-        <button data-bind="click: onClick">Get discount!</button>
+        <div data-bind="afterRender: onElementRendered"></div>
     </body>
-    <form data-bind="visible: isActive">
-        <input type="text" data-bind="hasFocus: isInputFocused, textInput: inputVal"/>
-    </form>
-    <form>
-        <label for="membership"> I am a member of the club</label>
-        <input name="membership" type="checkbox" data-bind="checked: isSubmitAllowed"/>
-        <button  data-bind="enable: isSubmitAllowed">Submit</button>
-    </form>
-
-    <p>
-        <input type='checkbox' data-bind="checked: hasCellphone" />
-        I have a cellphone
-    </p>
-    <p>
-        Your cellphone number:
-        <input type='text' data-bind="value: cellphoneNumber, enable: hasCellphone" />
-    </p>
 </html>
