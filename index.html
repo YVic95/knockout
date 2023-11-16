@@ -6,11 +6,15 @@
         <title>Webpack App</title>
     </head>
     <body>
-        <label for="first_name">First name: </label>
-        <input type="text" name="first_name" data-bind="textInput: firstName" autocomplete="off" />
-        <label for="last_name">Last name: </label>
-        <input type="text" name="last_name" data-bind="textInput: lastName" autocomplete="off"/>
-        <p>Customer name: <strong data-bind="text: customerName"></strong></p>
-        <p>Card holder: <strong data-bind="text: cardHolderName"></strong></p>
+        <ul data-bind="foreach: {data: collections, as: 'collection', noChildContext: true}">
+            <li>
+                <p data-bind="text: collection"></p>
+                <p data-bind="text: console.log($data)"></p>
+                <p data-bind="text: console.log($context)"></p>
+                <!-- if you do not use noChildContext attribute in foreach, you shoul use $parent.onClick to use parents context -->
+                <button data-bind="click: onClick">Click</button>
+            </li>
+        </ul>
+        <button data-bind="click: onClick">Click</button>        
     </body>
 </html>
