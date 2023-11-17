@@ -1,11 +1,20 @@
-function viewModel() {
-   
-    this.collections = ko.observableArray([['item 1', ' item 2'], ['item1']]);
-    
-    this.onClick = function() {
-        console.log('click');
-    }
+const myModel = {
+    param: ko.observable('') 
+};
+
+function viewModel1() {
+    this.param = myModel.param;
 }
-const model = new viewModel(); 
-ko.applyBindings(model);
-window.model = model;
+
+function viewModel2() {
+    this.param = myModel.param;
+
+    this.search = function() {
+        console.log('search', this.param());
+    };
+}
+const model1 = new viewModel1(); 
+const model2 = new viewModel2(); 
+ko.applyBindings(model1, scope1);
+ko.applyBindings(model2, scope2);
+window.model1 = model1;

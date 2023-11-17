@@ -6,15 +6,11 @@
         <title>Webpack App</title>
     </head>
     <body>
-        <ul data-bind="foreach: {data: collections, as: 'collection', noChildContext: true}">
-            <li>
-                <p data-bind="text: collection"></p>
-                <p data-bind="text: console.log($data)"></p>
-                <p data-bind="text: console.log($context)"></p>
-                <!-- if you do not use noChildContext attribute in foreach, you shoul use $parent.onClick to use parents context -->
-                <button data-bind="click: onClick">Click</button>
-            </li>
-        </ul>
-        <button data-bind="click: onClick">Click</button>        
+        <div id="scope1">
+            <input type="text" data-bind="textInput: param"/>
+        </div>
+        <div id="scope2">
+            <button data-bind="click: search">Search</button>        
+        </div>
     </body>
 </html>
